@@ -65,7 +65,7 @@ Versión 1.5 estable con mejoras significativas en:
 
 ## Instalación
 1. Clonar el repositorio
-2. Servir los archivos desde un servidor web
+2. Servir los archivos desde un servidor web como XAMPP
 3. Acceder a través del navegador
 
 ## Uso
