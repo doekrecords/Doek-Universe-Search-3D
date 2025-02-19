@@ -11,6 +11,8 @@
   *Transformando la búsqueda de información en una experiencia espacial inmersiva*
 </div>
 
+![image](https://github.com/user-attachments/assets/f25291df-9b28-46fc-8062-ba1c181c0a99)
+
 ## 🚀 Visión
 
 DOEK UNIVERSE SEARCH reimagina la forma en que interactuamos con la información digital. No es solo un motor de búsqueda; es un universo interactivo donde cada resultado cobra vida como un planeta único en un vasto cosmos digital.
@@ -47,6 +49,9 @@ DOEK UNIVERSE SEARCH reimagina la forma en que interactuamos con la información
    - Colaboración activa entre desarrolladores globales
    - Mentorías y aprendizaje continuo
 
+![image](https://github.com/user-attachments/assets/011eef8a-4c7c-4fba-8633-2f41080fa742)
+
+
 ## 🎮 Demo en Vivo
 
 Explora el universo en [demo.doekuniverse.com](https://demo.doekuniverse.com)
@@ -77,6 +82,9 @@ Tu contribución puede hacer la diferencia. Aquí hay algunas formas de particip
 ### 3. Documentación
 - Guías de usuario
 - Documentación técnica
+
+![image](https://github.com/user-attachments/assets/fa5b0931-72ce-4f83-a16c-2b06eeb9872e)
+
 
 ## 💎 Patrocinadores
 
