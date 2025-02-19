@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Search - Documentación 3D</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="universe"></canvas>
+    
+    <div class="overlay">
+        <nav>
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-globe-americas"></i>
+                    DOEK UNIVERSE SEARCH
+                </a>
+                <div class="nav-links">
+                    <a href="#" data-section="inicio">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                    <a href="#" data-section="instalacion">
+                        <i class="fas fa-download"></i> Instalación
+                    </a>
+                    <a href="#" data-section="avances">
+                        <i class="fas fa-chart-line"></i> Avances
+                    </a>
+                    <a href="#" data-section="documentacion">
+                        <i class="fas fa-book"></i> Docs
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="info-panel" class="info-panel">
+            <div class="panel-content">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    Selecciona un planeta
+                </h2>
+                <div class="initial-instructions">
+                    <p>Navega por el universo usando:</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-mouse"></i>
+                            Click izquierdo + arrastrar: Rotar cámara
+                        </li>
+                        <li>
+                            <i class="fas fa-mouse"></i>
+                            Click derecho + arrastrar: Pan
+                        </li>
+                        <li>
+                            <i class="fas fa-mouse"></i>
+                            Rueda del mouse: Zoom
+                        </li>
+                        <li>
+                            <i class="fas fa-hand-pointer"></i>
+                            Click en planeta: Ver información
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-indicator">
+            <div class="spinner"></div>
+            <p>Cargando Doek Universe System...</p>
+        </div>
+    </div>
+
+    <!-- Plantillas de contenido -->
+    <div id="templates" style="display: none;">
+        <!-- Inicio -->
+        <div data-template="inicio">
+            <h2>Universe Search v1.5</h2>
+            <p>Sistema de visualización 3D que transforma resultados de búsqueda en un universo interactivo navegable.</p>
+            <div class="version">2025</div>
+        </div>
+
+        <!-- Instalación -->
+        <div data-template="instalacion">
+            <h2>Instalación en XAMPP</h2>
+            <ol>
+                <li>Clonar repositorio en htdocs</li>
+                <li>Iniciar Apache</li>
+                <li>Acceder vía localhost</li>
+            </ol>
+            <code>git clone https://github.com/doekuniverse/doek-universe-search.git</code>
+        </div>
+
+        <!-- Avances -->
+        <div data-template="avances">
+            <h2>Avances del Proyecto</h2>
+            <ul>
+                <li>Sistema de búsqueda optimizado</li>
+                <li>Visualización 3D mejorada</li>
+                <li>Gestión de memoria eficiente</li>
+                <li>Nuevos efectos visuales</li>
+            </ul>
+        </div>
+
+        <!-- Documentación -->
+        <div data-template="documentacion">
+            <h2>Documentación Técnica</h2>
+            <ul>
+                <li>API Reference - DuckDuckGO</li>
+                <li>Guías de Desarrollo</li>
+                <li>Ejemplos de Código</li>
+                <li>Mejores Prácticas</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts en orden de dependencia -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script>
+        // Verificar que Three.js se cargó correctamente
+        if (typeof THREE === 'undefined') {
+            console.error('Error: Three.js no se cargó correctamente');
+            document.body.innerHTML = '<div style="color: white; text-align: center; padding: 20px;">Error: No se pudo cargar Three.js. Por favor, recarga la página.</div>';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.min.js"></script>
+    <script src="js/universe3d.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Ocultar indicador de carga cuando todo esté listo -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loading-indicator').style.display = 'none';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

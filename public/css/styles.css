@@ -1,0 +1,266 @@
+/* Variables [@DOEKUNIVERSE - Comunidad Global]*/
+:root {
+    --primary-color: #4361EE;
+    --accent-color: #4CC9F0;
+    --text-color: #F8F9FA;
+    --background-color: #0B0D17;
+    --panel-bg: rgba(11, 13, 23, 0.95);
+    --card-bg: rgba(16, 20, 34, 0.8);
+}
+
+/* Reset y estilos base [@DOEKUNIVERSE - Comunidad Global]*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden;
+    background: var(--background-color);
+}
+
+/* Canvas [@DOEKUNIVERSE - Comunidad Global]*/
+#universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Overlay [@DOEKUNIVERSE - Comunidad Global]*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Navegación [@DOEKUNIVERSE - Comunidad Global]*/
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--panel-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    pointer-events: all;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Panel de información [@DOEKUNIVERSE - Comunidad Global]*/
+.info-panel {
+    position: fixed;
+    bottom: -100%;
+    right: 2rem;
+    width: 400px;
+    background: var(--panel-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: all;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
+    z-index: 1000;
+}
+
+.info-panel.active {
+    bottom: 2rem;
+    transform: translateY(0);
+}
+
+.panel-content {
+    position: relative;
+}
+
+.panel-content h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.panel-content h2 i {
+    font-size: 1.4rem;
+}
+
+.panel-content ul, .panel-content ol {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.panel-content li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
+}
+
+.panel-content li i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-content code {
+    display: block;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.panel-content code:hover {
+    background: rgba(67, 97, 238, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Botón de cierre */
+.close-panel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.close-panel:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: var(--accent-color);
+}
+
+/* Indicador de carga [@DOEKUNIVERSE - Comunidad Global]*/
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+    pointer-events: all;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--accent-color);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltip para planetas [@DOEKUNIVERSE - Comunidad Global]*/
+.planet-tooltip {
+    position: fixed;
+    background: var(--panel-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1001;
+    border: 1px solid var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+    }
+    
+    .nav-links a {
+        display: block;
+        margin: 1rem 0;
+    }
+    
+    .info-panel {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+    
+    .info-panel.active {
+        bottom: 1rem;
+    }
+}

@@ -1,0 +1,200 @@
+/* Efectos de brillo para objetos celestes */
+.celestial-glow {
+    filter: drop-shadow(0 0 10px rgba(67, 97, 238, 0.7));
+}
+
+/* Animación de pulsación para estrellas */
+@keyframes starPulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Animación de rotación para objetos */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Efecto de hover para resultados */
+.result-hover {
+    transition: all 0.3s ease;
+}
+
+.result-hover:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(157, 78, 221, 0.8));
+}
+
+/* Títulos flotantes */
+.floating-title {
+    position: absolute;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Efectos de partículas */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    animation: particleFade 1.5s ease-out forwards;
+}
+
+@keyframes particleFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Tooltip de información */
+.result-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    max-width: 200px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.result-tooltip.visible {
+    opacity: 1;
+}
+
+/* Efectos de navegación */
+.navigation-trail {
+    position: absolute;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        rgba(67, 97, 238, 0),
+        rgba(67, 97, 238, 0.3)
+    );
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navigation-trail.active {
+    opacity: 1;
+}
+
+/* Estrellas de fondo */
+.background-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: starTwinkle 1s infinite alternate;
+}
+
+@keyframes starTwinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Efectos de selección */
+.selected-result {
+    animation: selectedPulse 2s infinite;
+}
+
+@keyframes selectedPulse {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.5); }
+    100% { filter: brightness(1); }
+}
+
+/* Efectos de transición entre búsquedas */
+.universe-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        rgba(0, 7, 20, 0.8) 100%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.universe-transition.active {
+    opacity: 1;
+}
+
+/* Efectos de carga */
+.loading-universe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loading-universe.active {
+    opacity: 1;
+}
+
+.loading-universe::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-top-color: #4361EE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Efectos de hover en resultados */
+.result-highlight {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        rgba(157, 78, 221, 0.2) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.result-highlight.active {
+    opacity: 1;
+}

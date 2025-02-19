@@ -1,0 +1,151 @@
+/* Estilos para los controles de navegación */
+#controls-help {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(67, 97, 238, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 14px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#controls-help.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+#controls-help p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#controls-help p::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #4361EE;
+    border-radius: 50%;
+}
+
+/* Efectos de navegación */
+.navigation-indicator {
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at center,
+        rgba(67, 97, 238, 0.3),
+        transparent 70%
+    );
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navigation-indicator.active {
+    opacity: 1;
+}
+
+/* Controles de cámara */
+.camera-controls {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.camera-control-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(67, 97, 238, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.camera-control-button:hover {
+    background: rgba(157, 78, 221, 0.3);
+    transform: translateY(-2px);
+}
+
+.camera-control-button:active {
+    transform: translateY(0);
+}
+
+/* Indicadores de movimiento */
+.movement-trail {
+    position: absolute;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(67, 97, 238, 0.3),
+        transparent
+    );
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.movement-trail.active {
+    opacity: 1;
+}
+
+/* Tooltips de control */
+.control-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.camera-control-button:hover + .control-tooltip {
+    opacity: 1;
+}
+
+/* Indicador de rotación */
+.rotation-indicator {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(67, 97, 238, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rotation-indicator.active {
+    opacity: 1;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
