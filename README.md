@@ -55,14 +55,7 @@ Explora el universo en [demo.doekuniverse.com](https://demo.doekuniverse.com)
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/yourusername/doek-universe.git
-
-# Instalar dependencias
-cd doek-universe
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
+git clone https://github.com/yourusername/doek-universe-search-3d.git
 ```
 
 ## 🤝 Cómo Contribuir
